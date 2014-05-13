@@ -27,19 +27,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.github.snowdream.android.template.library.HelloWorldLib;
 
-import static com.github.snowdream.android.template.app.R.*;
-
-
 public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(id.container, new PlaceholderFragment())
+                    .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
     }
@@ -76,9 +73,9 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(layout.fragment_main, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-            TextView text = (TextView)rootView.findViewById(id.content);
+            TextView text = (TextView)rootView.findViewById(R.id.content);
             text.setText(HelloWorldLib.getHelloWorld());
             return rootView;
         }
