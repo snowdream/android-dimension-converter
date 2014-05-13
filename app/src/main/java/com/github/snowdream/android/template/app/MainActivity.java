@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.snowdream.android.apps.helloworld;
+package com.github.snowdream.android.template.app;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,8 +25,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import com.github.snowdream.android.template.library.HelloWorldLib;
 
-import com.github.snowdream.android.helloworld.HelloWorldLib;
+import static com.github.snowdream.android.template.app.R.*;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -34,11 +35,11 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(layout.activity_main);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(id.container, new PlaceholderFragment())
                     .commit();
         }
     }
@@ -75,9 +76,9 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            View rootView = inflater.inflate(layout.fragment_main, container, false);
 
-            TextView text = (TextView)rootView.findViewById(R.id.content);
+            TextView text = (TextView)rootView.findViewById(id.content);
             text.setText(HelloWorldLib.getHelloWorld());
             return rootView;
         }
