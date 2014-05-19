@@ -10,7 +10,7 @@ a template for android with gradle
 
 ##Requirements
 * Gradle 1.10, 1.11 or 1.12 with the plugin 0.10.0
-* SDK with Build Tools 19.0.0+. Some features may require a more recent version.
+* SDK with Build Tools 19.1+. Some features may require a more recent version.
 
 ##HOW TO
 Learn how to develop with IntelliJ/Android Studio and Gradle.
