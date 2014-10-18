@@ -25,8 +25,7 @@ buildscript {
 }
 
 allprojects {
-    groupId = POM_GROUP_ID
-    artifactId = POM_ARTIFACT_ID
+    group = POM_GROUP_ID
     version = POM_VERSION
 
     repositories {
