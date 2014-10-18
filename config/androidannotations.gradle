@@ -26,7 +26,7 @@ apply plugin: 'android-apt'
 
 dependencies {
     apt "org.androidannotations:androidannotations:3.1"
-    compile "org.androidannotations:androidannotations-api:3.1"   //if you want to use androidannotations,please add this.
+    compile "org.androidannotations:androidannotations-api:3.1"
 }
 
 apt {
