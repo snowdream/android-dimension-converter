@@ -19,7 +19,6 @@ apply plugin: 'idea'
 apply from: '../config/android.gradle'
 
 dependencies {
-    compile project(':lib')
     compile 'com.android.support:appcompat-v7:19.1.0'
     compile 'com.android.support:support-v4:19.1.0'
 }

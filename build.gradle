@@ -21,7 +21,6 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:0.13.3'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4' //if you want to use androidannotations,please add this.
     }
 }
 
