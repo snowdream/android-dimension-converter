@@ -14,26 +14,60 @@
  * limitations under the License.
  */
 
-package com.github.snowdream.android.template.app;
+package com.github.snowdream.android.apps.dimensionconverter;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.*;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
-
+    private TextView textView_Dimension = null;
+    private TextView textView_Dpi = null;
+    private DimensionFragment dimensionFragment = null;
+    private DPIFragment dpiFragment = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        textView_Dimension = (TextView)findViewById(R.id.textView_dimension);
+        textView_Dpi = (TextView)findViewById(R.id.textView_dpi);
+
+        dimensionFragment = new DimensionFragment();
+        dpiFragment = new DPIFragment();
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, dimensionFragment)
                     .commit();
         }
     }
+
+    public void onClick(View view){
+        int id = view.getId();
+        switch (id){
+            case R.id.textView_dimension:
+               // textView_Dimension.setBackgroundResource(androi);
+                break;
+            case R.id.textView_dpi:
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
     /**
@@ -47,7 +81,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_dimension, container, false);
             return rootView;
         }
     }

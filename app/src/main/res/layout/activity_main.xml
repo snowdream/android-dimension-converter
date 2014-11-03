@@ -3,25 +3,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
     <LinearLayout
-                  android:id="@+id/footer"
-                  android:layout_width="match_parent"
-                  android:layout_height="48dp"
-                  android:layout_alignParentBottom="true"
-                  android:gravity="center_vertical"
-                  android:orientation="horizontal">
+            android:id="@+id/footer"
+            android:background="@drawable/idle_tap"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
         <TextView
-                  android:layout_width="0dp"
-                  android:layout_weight="1"
-                  android:gravity="center"
-                  android:layout_height="match_parent"
-                  android:text="Dimension"
-                  android:textAppearance="?android:attr/textAppearanceLarge"/>
+                android:id="@+id/textView_dimension"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:text="Dimension"
+                android:onClick="onClick"
+                android:clickable="true"
+                android:background="@drawable/v4_common_idle_tap_selector"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
         <TextView
+                android:id="@+id/textView_dpi"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:clickable="true"
+                android:onClick="onClick"
                 android:text="DPI"
+                android:background="@drawable/v4_common_idle_tap_selector"
                 android:textAppearance="?android:attr/textAppearanceLarge"/>
     </LinearLayout>
 
