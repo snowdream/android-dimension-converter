@@ -18,6 +18,7 @@ package com.github.snowdream.android.apps.dimensionconverter;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.view.*;
 import android.widget.TextView;
@@ -39,8 +40,12 @@ public class MainActivity extends ActionBarActivity {
         dpiFragment = new DPIFragment();
 
         if (savedInstanceState == null) {
+            textView_Dimension.setBackgroundResource(R.drawable.v4_idle_tap_item_bg_hl);
+            textView_Dpi.setBackgroundResource(R.drawable.v3_btn_transprent_bg);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, dimensionFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                    .addToBackStack(null)
                     .commit();
         }
     }
@@ -49,9 +54,22 @@ public class MainActivity extends ActionBarActivity {
         int id = view.getId();
         switch (id){
             case R.id.textView_dimension:
-               // textView_Dimension.setBackgroundResource(androi);
+                textView_Dimension.setBackgroundResource(R.drawable.v4_idle_tap_item_bg_hl);
+                textView_Dpi.setBackgroundResource(R.drawable.v3_btn_transprent_bg);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, dimensionFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                        .addToBackStack(null)
+                        .commit();
                 break;
             case R.id.textView_dpi:
+                textView_Dimension.setBackgroundResource(R.drawable.v3_btn_transprent_bg);
+                textView_Dpi.setBackgroundResource(R.drawable.v4_idle_tap_item_bg_hl);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, dpiFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                        .addToBackStack(null)
+                        .commit();
                 break;
             default:
                 break;

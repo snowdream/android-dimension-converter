@@ -1,109 +1,183 @@
 package com.github.snowdream.android.apps.dimensionconverter;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link DPIFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link DPIFragment#newInstance} factory method to
- * create an instance of this fragment.
- *
- */
 public class DPIFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private EditText editText_ldpi = null;
+    private CustomTextWatcher textWatcher_ldpi = null;
+    private EditText editText_mdpi = null;
+    private CustomTextWatcher textWatcher_mdpi = null;
+    private EditText editText_tvdpi = null;
+    private CustomTextWatcher textWatcher_tvdpi = null;
+    private EditText editText_hdpi = null;
+    private CustomTextWatcher textWatcher_hdpi = null;
+    private EditText editText_xhdpi = null;
+    private CustomTextWatcher textWatcher_xhdpi = null;
+    private EditText editText_xxhdpi = null;
+    private CustomTextWatcher textWatcher_xxhdpi = null;
+    private EditText editText_xxxhdpi = null;
+    private CustomTextWatcher textWatcher_xxxhdpi = null;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DimensionFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DPIFragment newInstance(String param1, String param2) {
-        DPIFragment fragment = new DPIFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
     public DPIFragment() {
-        // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dimension, container, false);
+        View view = inflater.inflate(R.layout.fragment_dpi, container, false);
+
+        editText_ldpi = (EditText) view.findViewById(R.id.editText_ldpi);
+        textWatcher_ldpi = new CustomTextWatcher(editText_ldpi, DPI.LDPI);
+
+        editText_mdpi = (EditText) view.findViewById(R.id.editText_mdpi);
+        textWatcher_mdpi = new CustomTextWatcher(editText_mdpi, DPI.MDPI);
+
+        editText_tvdpi = (EditText) view.findViewById(R.id.editText_tvdpi);
+        textWatcher_tvdpi = new CustomTextWatcher(editText_tvdpi, DPI.TVDPI);
+
+        editText_hdpi = (EditText) view.findViewById(R.id.editText_hdpi);
+        textWatcher_hdpi =new CustomTextWatcher(editText_hdpi, DPI.HDPI);
+
+        editText_xhdpi = (EditText) view.findViewById(R.id.editText_xhdpi);
+        textWatcher_xhdpi= new CustomTextWatcher(editText_xhdpi, DPI.XHDPI);
+
+        editText_xxhdpi = (EditText) view.findViewById(R.id.editText_xxhdpi);
+        textWatcher_xxhdpi = new CustomTextWatcher(editText_xxhdpi, DPI.XXHDPI);
+
+        editText_xxxhdpi = (EditText) view.findViewById(R.id.editText_xxxhdpi);
+        textWatcher_xxxhdpi =new CustomTextWatcher(editText_xxxhdpi, DPI.XXXHDPI);
+
+        initUI();
+        return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+    private void registerTextChangedListeners(){
+        editText_ldpi.addTextChangedListener(textWatcher_ldpi);
+        editText_mdpi.addTextChangedListener(textWatcher_mdpi);
+        editText_tvdpi.addTextChangedListener(textWatcher_tvdpi);
+        editText_hdpi.addTextChangedListener(textWatcher_hdpi);
+        editText_xhdpi.addTextChangedListener(textWatcher_xhdpi);
+        editText_xxhdpi.addTextChangedListener(textWatcher_xxhdpi);
+        editText_xxxhdpi.addTextChangedListener(textWatcher_xxxhdpi);
+    }
+
+    private void unregisterTextChangedListeners(){
+        editText_ldpi.removeTextChangedListener(textWatcher_ldpi);
+        editText_mdpi.removeTextChangedListener(textWatcher_mdpi);
+        editText_tvdpi.removeTextChangedListener(textWatcher_tvdpi);
+        editText_hdpi.removeTextChangedListener(textWatcher_hdpi);
+        editText_xhdpi.removeTextChangedListener(textWatcher_xhdpi);
+        editText_xxhdpi.removeTextChangedListener(textWatcher_xxhdpi);
+        editText_xxxhdpi.removeTextChangedListener(textWatcher_xxxhdpi);
+    }
+
+    private void initUI(){
+        unregisterTextChangedListeners();;
+
+        editText_ldpi.setText("");
+        editText_mdpi.setText("");
+        editText_tvdpi.setText("");
+        editText_hdpi.setText("");
+        editText_xhdpi.setText("");
+        editText_xxhdpi.setText("");
+        editText_xxxhdpi.setText("");
+
+        registerTextChangedListeners();
+    }
+
+    private class CustomTextWatcher implements TextWatcher {
+        private DPI dpi;
+        private EditText editText;
+
+        private CustomTextWatcher() {
+        }
+
+        public CustomTextWatcher(EditText editText, DPI dpi) {
+            this.dpi = dpi;
+            this.editText = editText;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            if (TextUtils.isEmpty(s)) {
+                initUI();
+                return;
+            }
+
+            caculateDPI(editText, s.toString(), dpi);
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            if (s != null){
+                caculateDPI(editText,s.toString(),dpi);
+            }
         }
     }
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+
+    private void caculateDPI(EditText editText, String str, DPI dpi) {
+        if (TextUtils.isEmpty(str) || editText == null) {
+            return;
+        }
+        unregisterTextChangedListeners();;
+        Float value = 0f;
         try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
+            value = Float.parseFloat(str);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
-    }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
+        Float mdpi = value / dpi.getRatio();
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
+        if (editText !=editText_ldpi ) {
+            editText_ldpi.setText(mdpi * DPI.LDPI.getRatio() + "");
+        }
+
+        if (editText !=editText_mdpi ) {
+            editText_mdpi.setText(mdpi * DPI.MDPI.getRatio() + "");
+        }
+
+        if (editText !=editText_tvdpi ) {
+            editText_tvdpi.setText(mdpi*DPI.TVDPI.getRatio()+"");
+        }
+
+        if (editText !=editText_hdpi ) {
+            editText_hdpi.setText(mdpi * DPI.HDPI.getRatio() + "");
+        }
+
+        if (editText !=editText_xhdpi ) {
+            editText_xhdpi.setText(mdpi * DPI.XHDPI.getRatio() + "");
+        }
+
+        if (editText !=editText_xxhdpi ) {
+            editText_xxhdpi.setText(mdpi*DPI.XXHDPI.getRatio()+"");
+        }
+
+        if (editText !=editText_xxxhdpi ) {
+            editText_xxxhdpi.setText(mdpi * DPI.XXXHDPI.getRatio() + "");
+        }
+
+        registerTextChangedListeners();
     }
 
 }
