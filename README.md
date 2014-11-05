@@ -9,6 +9,9 @@ Dimension Converter
 ##Requirements
 Android 2.2 +
 
+##Release
+[Github](https://github.com/snowdream/android-dimension-converter/releases/download/0.0.1/dimension-converter-v0.0.1-release.apk)
+
 ##Preview
 ![dimension.png](https://raw.githubusercontent.com/snowdream/android-dimension-converter/master/docs/preview/dimension.png "dimension.png")
 
