@@ -9,21 +9,21 @@ public enum DPI{
     XXHDPI(480,3f),
     XXXHDPI(640,4f);
 
-    private float ratio;
+    private float density;
     private int dpi;
 
     private DPI(){};
 
     private DPI(final int dpi,final float ratio){
         this.dpi = dpi;
-        this.ratio = ratio;
+        this.density = ratio;
     }
 
     public int getDPI(){
         return this.dpi;
     }
 
-    public float getRatio(){
-        return this.ratio;
+    public float getDensity(){
+        return this.density;
     }
 }

@@ -45,7 +45,6 @@ public class MainActivity extends ActionBarActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, dimensionFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                    .addToBackStack(null)
                     .commit();
         }
     }
@@ -59,7 +58,6 @@ public class MainActivity extends ActionBarActivity {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, dimensionFragment)
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                        .addToBackStack(null)
                         .commit();
                 break;
             case R.id.textView_dpi:
@@ -68,7 +66,6 @@ public class MainActivity extends ActionBarActivity {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, dpiFragment)
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                        .addToBackStack(null)
                         .commit();
                 break;
             default:

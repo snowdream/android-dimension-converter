@@ -62,6 +62,8 @@ public class DPIFragment extends Fragment {
         editText_xxxhdpi = (EditText) view.findViewById(R.id.editText_xxxhdpi);
         textWatcher_xxxhdpi =new CustomTextWatcher(editText_xxxhdpi, DPI.XXXHDPI);
 
+        getActivity().setTitle(R.string.title_dpi);
+
         initUI();
         return view;
     }
@@ -147,34 +149,34 @@ public class DPIFragment extends Fragment {
             e.printStackTrace();
         }
 
-        Float mdpi = value / dpi.getRatio();
+        Float mdpi = value / dpi.getDensity();
 
         if (editText !=editText_ldpi ) {
-            editText_ldpi.setText(mdpi * DPI.LDPI.getRatio() + "");
+            editText_ldpi.setText(mdpi * DPI.LDPI.getDensity() + "");
         }
 
         if (editText !=editText_mdpi ) {
-            editText_mdpi.setText(mdpi * DPI.MDPI.getRatio() + "");
+            editText_mdpi.setText(mdpi * DPI.MDPI.getDensity() + "");
         }
 
         if (editText !=editText_tvdpi ) {
-            editText_tvdpi.setText(mdpi*DPI.TVDPI.getRatio()+"");
+            editText_tvdpi.setText(mdpi*DPI.TVDPI.getDensity()+"");
         }
 
         if (editText !=editText_hdpi ) {
-            editText_hdpi.setText(mdpi * DPI.HDPI.getRatio() + "");
+            editText_hdpi.setText(mdpi * DPI.HDPI.getDensity() + "");
         }
 
         if (editText !=editText_xhdpi ) {
-            editText_xhdpi.setText(mdpi * DPI.XHDPI.getRatio() + "");
+            editText_xhdpi.setText(mdpi * DPI.XHDPI.getDensity() + "");
         }
 
         if (editText !=editText_xxhdpi ) {
-            editText_xxhdpi.setText(mdpi*DPI.XXHDPI.getRatio()+"");
+            editText_xxhdpi.setText(mdpi*DPI.XXHDPI.getDensity()+"");
         }
 
         if (editText !=editText_xxxhdpi ) {
-            editText_xxxhdpi.setText(mdpi * DPI.XXXHDPI.getRatio() + "");
+            editText_xxxhdpi.setText(mdpi * DPI.XXXHDPI.getDensity() + "");
         }
 
         registerTextChangedListeners();

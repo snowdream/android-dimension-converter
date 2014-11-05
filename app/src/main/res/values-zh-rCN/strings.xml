@@ -2,4 +2,6 @@
 
 <resources>
     <string name="app_name">雪梦尺寸换算器</string>
+    <string name="title_dimension">雪梦尺寸换算器 - Dimension</string>
+    <string name="title_dpi">雪梦尺寸换算器 - DPI</string>
 </resources>
