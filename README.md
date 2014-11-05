@@ -1,26 +1,18 @@
-#android-gradle-template
+#android-dimension-converter
 
-a template for android with gradle
+Dimension Converter
 
 ##Features
-* Easy to develop the android apps or libraries with gradle
-* Support publishing an aar/jar file to Maven Central with Gradle
-* Support the library androidannotations,[https://github.com/excilys/androidannotations](https://github.com/excilys/androidannotations)
-* Configuring the build environment via gradle.properties
+* Conversion in dp、dip、sp、pt、px、mm、in according your device
+* Conversion in ldpi、mdpi、tvdpi、hdpi、xhdpi、xxhdpi、xxxhdpi
 
 ##Requirements
-* Gradle 1.10, 1.11 or 1.12 with the plugin 0.12.2
-* SDK with Build Tools 19.1+. Some features may require a more recent version.
+Android 2.2 +
 
-##HOW TO
-Learn how to develop with IntelliJ/Android Studio and Gradle.
-[http://snowdream.github.io/blog/android/2013/12/25/how-to-develop-with-android-gradle-template/](http://snowdream.github.io/blog/android/2013/12/25/how-to-develop-with-android-gradle-template/)
+##Preview
+![dimension.png](https://raw.githubusercontent.com/snowdream/android-dimension-converter/master/docs/preview/dimension.png "dimension.png")
 
-##Gradle Plugin User Guide
-[http://tools.android.com/tech-docs/new-build-system/user-guide](http://tools.android.com/tech-docs/new-build-system/user-guide)
-
-##Gradle User Guide
-[http://www.gradle.org/docs/current/userguide/userguide.html](http://www.gradle.org/docs/current/userguide/userguide.html)
+![dpi.png](https://raw.githubusercontent.com/snowdream/android-dimension-converter/master/docs/preview/dpi.png "dpi.png")
 
 ##License
 ```
