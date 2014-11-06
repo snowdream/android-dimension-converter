@@ -3,7 +3,7 @@
 Dimension Converter
 
 ##Features
-* Conversion in dp、dip、sp、pt、px、mm、in according your device
+* Conversion in dp、dip、sp、pt、px、mm、in according  to your device
 * Conversion in ldpi、mdpi、tvdpi、hdpi、xhdpi、xxhdpi、xxxhdpi
 
 ##Requirements
