@@ -10,8 +10,8 @@ Dimension Converter
 Android 2.2 +
 
 ##Release
-Google Play : [![Get it on Google Play](https://developer.android.com/images/brand/en_generic_rgb_wo_60.png "Get it on Google Play")][https://play.google.com/store/apps/details?id=com.github.snowdream.android.apps.dimensionconverter]        
-[Github](https://github.com/snowdream/android-dimension-converter/releases/download/0.0.1/dimension-converter-v0.0.1-release.apk)
+Google Play : [![Get it on Google Play](https://developer.android.com/images/brand/en_generic_rgb_wo_60.png "Get it on Google Play")](https://play.google.com/store/apps/details?id=com.github.snowdream.android.apps.dimensionconverter)        
+Github : [https://github.com/snowdream/android-dimension-converter/releases/download/0.0.1/dimension-converter-v0.0.1-release.apk](https://github.com/snowdream/android-dimension-converter/releases/download/0.0.1/dimension-converter-v0.0.1-release.apk)
 
 ##Preview
 ![dimension.png](https://raw.githubusercontent.com/snowdream/android-dimension-converter/master/docs/preview/dimension.png "dimension.png")
